@@ -5,8 +5,11 @@ import styles from "@/styles/Home.module.css";
 
 export default function Home() {
   return (
-    <Head>
-      <title>Linkbrary</title>
-    </Head>
+    <>
+      <Head>
+        <title>Linkbrary</title>
+      </Head>
+      <h1>Main Page</h1>
+    </>
   );
 }
