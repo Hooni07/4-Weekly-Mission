@@ -1,3 +1,4 @@
+import Header from "@/components/Header";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
@@ -7,8 +8,9 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <title>Linkbrary</title>
-        <link rel="icon" href="/functionIcon/union.svg" />
+        <link rel="icon" href="/image/logo.png" />
       </Head>
+      <Header />
       <Component {...pageProps} />
     </>
   );

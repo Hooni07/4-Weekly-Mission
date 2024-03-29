@@ -1,7 +1,5 @@
 import Head from "next/head";
-import Image from "next/image";
-import { Inter } from "next/font/google";
-import styles from "@/styles/Home.module.css";
+import Input from "@/components/Input";
 
 export default function Home() {
   return (
@@ -9,6 +7,7 @@ export default function Home() {
       <Head>
         <title>Linkbrary</title>
       </Head>
+      <Input className="testInput" />
       <h1>Main Page</h1>
     </>
   );
