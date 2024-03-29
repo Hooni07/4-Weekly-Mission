@@ -61,8 +61,8 @@ export default function Input({ className = "", ...props }: InputProps) {
         ) : (
           ""
         )}
+        {inputError && <p className={styles.error}>값을 입력해 주세요.</p>}
       </p>
-      {inputError && <p className={styles.error}>값을 입력해 주세요.</p>}
     </>
   );
 }
