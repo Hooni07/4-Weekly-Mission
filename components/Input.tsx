@@ -16,7 +16,6 @@ export default function Input({ className = "", ...props }) {
     setInputContent(value);
     setInputError(value.trim() === "");
     setIsWrite(value.trim() !== ""); // eye-on, eye-off 버튼 활성화 판단
-    console.log(inputContent, inputError, isWrite);
   };
 
   // input에 에러가 있는 경우 blur 설정하도록 정의
