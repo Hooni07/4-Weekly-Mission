@@ -2,9 +2,13 @@ import Image from "next/image";
 import styles from "./Input.module.css";
 import onImg from "@/public/image/eye-on.svg";
 import offImg from "@/public/image/eye-off.svg";
-import { useState } from "react";
+import { InputHTMLAttributes, useState } from "react";
 
-export default function Input({ className = "", ...props }) {
+interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+  className?: string;
+}
+
+export default function Input({ className = "", ...props }: InputProps) {
   const [inputContent, setInputContent] = useState("");
   const [inputError, setInputError] = useState(false);
   const [isWrite, setIsWrite] = useState(false);
