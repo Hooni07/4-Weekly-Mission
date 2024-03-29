@@ -42,13 +42,22 @@ export default function Input({ className = "", ...props }) {
           onBlur={handleBlur}
           {...props}
         />
-        <button onClick={toggleVisibility} className={styles.eyeIcon}>
-          {isVisible ? (
-            <Image src={onImg} width={16} height={16} alt="비밀번호 보기" />
-          ) : (
-            <Image src={offImg} width={16} height={16} alt="비밀번호 숨기기" />
-          )}
-        </button>
+        {isWrite ? (
+          <button onClick={toggleVisibility} className={styles.eyeIcon}>
+            {isVisible ? (
+              <Image src={onImg} width={16} height={16} alt="비밀번호 보기" />
+            ) : (
+              <Image
+                src={offImg}
+                width={16}
+                height={16}
+                alt="비밀번호 숨기기"
+              />
+            )}
+          </button>
+        ) : (
+          ""
+        )}
       </p>
       {inputError && <p className={styles.error}>값을 입력해 주세요.</p>}
     </>

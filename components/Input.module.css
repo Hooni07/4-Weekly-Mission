@@ -1,28 +1,30 @@
 .inputcontent {
   position: relative;
   width: 35rem;
+  border: 0;
+  outline: none;
 }
 
 .input {
   width: 33rem;
   border: 1px solid #ccd5e3;
   border-radius: 8px;
-  padding: 16px;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 26px;
+  padding: 18px 15px;
+  font-weight: 400;
+  font-size: 16px;
+  outline: none;
 }
 
 .eyeIcon {
   position: absolute;
   right: 15px;
-  top: 20px;
+  top: 18px;
   border: none;
   background: none;
 }
 
 .inputError {
-  border: 1px solid #ff5b56;
+  border: 1.5px solid #ff5b56;
 }
 
 .error {
@@ -31,6 +33,6 @@
 }
 
 .input:focus-visible {
-  border: 1px solid #6d6afe;
+  border: 1.5px solid #6d6afe;
   outline: none;
 }
