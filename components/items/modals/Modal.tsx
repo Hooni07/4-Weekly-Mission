@@ -55,7 +55,11 @@ const Modal: React.FC<ModalProps> = ({
   };
   return (
     <ModalComponenet>
-      <div className={linkAddModal ? "modalContainer" : "smallModalContainer"}>
+      <div
+        className={
+          linkAddModal ? styles.modalContainer : styles.smallModalContainer
+        }
+      >
         <ModalTitle>{title}</ModalTitle>
         <CloseButton className="modal-button-close" onClick={handleClickExit}>
           <img src="@/public/functionIcon/closeIcon.svg" alt="닫기" />
