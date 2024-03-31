@@ -40,7 +40,7 @@ function CardSection({ item, isShowModal, linkModal, linkDeleteModal }) {
       </div>
       <div className={styles.cardInfoGroup}>
         <div className={styles.timeInfoGroup}>
-          <p className={styles.celapsedTime}>{CalculateTime(createdDays)}</p>
+          <p className={styles.elapsedTime}>{CalculateTime(createdDays)}</p>
           <button className={styles.more} onClick={handleKebabClick}>
             <Image src={kebabIcon} alt="더보기" width={21} height={17} />
             {kebab[item.id] ? (
