@@ -23,6 +23,6 @@
     "**/*.tsx",
     "components/Header.jsx",
     "pages/shared.jsx"
-  ],
+, "pages/folder.jsx"  ],
   "exclude": ["node_modules"]
 }

@@ -4,6 +4,7 @@ import axios from "@/lib/axios";
 import Head from "next/head";
 import Header from "@/components/HeaderBottom/Header";
 import { useEffect, useState } from "react";
+import Footer from "@/components/HeaderBottom/Footer";
 
 export default function App({ Component, pageProps }: AppProps) {
   const [user, setUser] = useState(null);
@@ -25,6 +26,7 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
       <Header user={user} />
       <Component {...pageProps} />
+      <Footer />
     </>
   );
 }
