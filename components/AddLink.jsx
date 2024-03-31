@@ -2,7 +2,7 @@ import { styled } from "styled-components";
 import Image from "next/image";
 import linkImg from "@/public/functionIcon/link.svg";
 
-function AddLink({ setIsShowModal }) {
+export default function AddLink({ setIsShowModal }) {
   const showLinkAddModal = (e) => {
     e.preventDefault();
     setIsShowModal((prev) => ({ linkModal: true, folderAddModal: false }));
@@ -18,8 +18,6 @@ function AddLink({ setIsShowModal }) {
     </BackGround>
   );
 }
-
-export default AddLink;
 
 const BackGround = styled.div`
   background-color: var(--light-blue);

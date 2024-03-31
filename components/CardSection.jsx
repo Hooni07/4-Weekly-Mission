@@ -3,6 +3,8 @@ import Link from "next/link";
 import Image from "next/image";
 import CalculateTime from "@/functions/CalculateTime";
 import KebabMenu from "@/components/items/kebabMenu";
+import starIcon from "@/public/functionIcon/star.svg";
+import kebabIcon from "@/public/functionIcon/kebab.svg";
 import { useState } from "react";
 
 function CardSection({ item, isShowModal, linkModal, linkDeleteModal }) {
@@ -26,21 +28,21 @@ function CardSection({ item, isShowModal, linkModal, linkDeleteModal }) {
       rel="noopener noreferrer"
       className={styles.linkCardArea}
     >
-      <div className={styles.imageGroup}>
+      <div className={styles.imgGroup}>
         {imageSource ? (
-          <Image src={imageSource} alt="미리보기" className="img-card" />
+          <img src={imageSource} alt="미리보기" className={styles.imgCard} />
         ) : (
           <div className={styles.noCardImg}></div>
         )}
         <button className={styles.btnStar}>
-          <img src={"@/public/functionIcon/star.svg"} alt="별모양" />
+          <Image src={starIcon} alt="별모양" width={35} height={35} />
         </button>
       </div>
       <div className={styles.cardInfoGroup}>
         <div className={styles.timeInfoGroup}>
           <p className={styles.celapsedTime}>{CalculateTime(createdDays)}</p>
           <button className={styles.more} onClick={handleKebabClick}>
-            <img src="@/public/functionIcon/kebab.svg" alt="더보기" />
+            <Image src={kebabIcon} alt="더보기" width={21} height={17} />
             {kebab[item.id] ? (
               <KebabMenu
                 isShowModal={isShowModal}

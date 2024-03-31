@@ -3,7 +3,7 @@ import { useState } from "react";
 import useGetJson from "@/functions/useGetJson";
 import axios from "@/lib/axios";
 
-function Category({ changeTitle, changeID, isShowModal }) {
+export default function Category({ changeTitle, changeID, isShowModal }) {
   const getFolderList = async () => {
     try {
       const result = await axios.get(`/users/1/folders`);
@@ -121,5 +121,3 @@ const AddFolder = styled.button`
   letter-spacing: -0.3px;
   margin-right: 4px;
 `;
-
-export default Category;

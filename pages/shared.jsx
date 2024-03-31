@@ -35,7 +35,7 @@ export default function Shared() {
       </Head>
       <Profile folder={contentName} user={userName} proImg={profileImage} />
       <Search />
-      {/* <Contents items={data} /> */}
+      <Contents items={data} />
     </>
   );
 }

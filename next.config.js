@@ -15,6 +15,18 @@ const nextConfig = {
         port: "",
         pathname: "/badges/**",
       },
+      {
+        protocol: "https",
+        hostname: "codeit-frontend.codeit.com",
+        port: "",
+        pathname: "/static/**",
+      },
+      {
+        protocol: "https",
+        hostname: "reactjs.org",
+        port: "",
+        pathname: "/**",
+      },
     ],
   },
 };

@@ -2,19 +2,18 @@ import { useEffect, useState } from "react";
 import { styled } from "styled-components";
 import Head from "next/head";
 import axios from "@/lib/axios";
-import Search from "@/components/items/Search";
 import AddLink from "@/components/AddLink";
 import Category from "@/components/Category";
 import FolderFunction from "@/components/FolderFunction";
 import Contents from "@/components/Contents";
 import useGetJson from "@/functions/useGetJson";
+import Search from "@/components/items/Search";
 import Modal from "@/components/items/modals/Modal";
 
 export default function Folder() {
   const [title, setTitle] = useState("전체");
   const [listId, setListId] = useState("");
   const [data, setData] = useState([]);
-  const [user, setUser] = useState(null);
   const [allMenuId, setAllMenuId] = useState(null);
   const [addModal, setAddModal] = useState({
     linkModal: false,
@@ -36,25 +35,16 @@ export default function Folder() {
         `/users/1${id === 0 ? `/links` : `/folders/${id}`}`
       );
       const result = response.data;
+      console.log(result);
       setData(result);
     } catch (error) {
       console.error(error);
     }
   };
 
-  const handleUser = async () => {
-    const user = await axios.get("/sample/user");
-    setUser(user);
-  };
-
   useEffect(() => {
     handleLoad(listId);
-    handleUser();
   }, [listId]);
-
-  useEffect(() => {
-    handleUser();
-  }, []);
 
   const isShowModal = (linkAddModal) => {
     setAddModal(linkAddModal);

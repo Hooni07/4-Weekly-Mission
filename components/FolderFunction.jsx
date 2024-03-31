@@ -1,4 +1,8 @@
 import styled from "styled-components";
+import Image from "next/image";
+import shareIcon from "@/public/functionIcon/share.svg";
+import editIcon from "@/public/functionIcon/pen.svg";
+import deleteIcon from "@/public/functionIcon/trash.svg";
 
 function FolderFunction({ titleName, isShowModal }) {
   const isShareModal = (e) => {
@@ -37,15 +41,21 @@ function FolderFunction({ titleName, isShowModal }) {
       {titleName !== "전체" ? (
         <OptionBox>
           <Option onClick={isShareModal}>
-            <OptionIcon src="/assets/share.svg"></OptionIcon>
+            <OptionIcon>
+              <Image src={shareIcon} alt="공유" width={18} height={18} />
+            </OptionIcon>
             <OptionText>공유</OptionText>
           </Option>
           <Option onClick={isEditModal}>
-            <OptionIcon src="/assets/pen.svg"></OptionIcon>
+            <OptionIcon>
+              <Image src={editIcon} alt="편집" width={18} height={18} />
+            </OptionIcon>
             <OptionText>이름 변경</OptionText>
           </Option>
           <Option onClick={isDeleteModal}>
-            <OptionIcon src="/assets/trash.svg"></OptionIcon>
+            <OptionIcon>
+              <Image src={deleteIcon} alt="삭제" width={18} height={18} />
+            </OptionIcon>
             <OptionText>삭제</OptionText>
           </Option>
         </OptionBox>
