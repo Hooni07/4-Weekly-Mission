@@ -6,6 +6,8 @@ import AddLinkModal from "./AddLinkModal";
 import DeleteModal from "./DeleteModal";
 import EditModal from "./EditModal";
 import ShareModal from "./ShareModal";
+import closeIcon from "@/public/functionIcon/closeIcon.svg";
+import Image from "next/image";
 
 interface Menu {
   id: string;
@@ -62,7 +64,7 @@ const Modal: React.FC<ModalProps> = ({
       >
         <ModalTitle>{title}</ModalTitle>
         <CloseButton className="modal-button-close" onClick={handleClickExit}>
-          <img src="@/public/functionIcon/closeIcon.svg" alt="닫기" />
+          <Image src={closeIcon} alt="닫기" width={24} height={24} />
         </CloseButton>
         {linkDeleteModal ? <DeleteModal link={dataUrl} /> : null}
         {deleteModal ? <DeleteModal title="폴더 삭제" /> : null}

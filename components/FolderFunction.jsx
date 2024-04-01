@@ -108,7 +108,7 @@ const Option = styled.button`
   gap: 4px;
 `;
 
-const OptionIcon = styled.img`
+const OptionIcon = styled(Image)`
   width: 18px;
   height: 18px;
 `;

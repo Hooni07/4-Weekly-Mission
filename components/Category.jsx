@@ -7,7 +7,6 @@ export default function Category({ changeTitle, changeID, isShowModal }) {
   const getFolderList = async () => {
     try {
       const result = await axios.get(`/users/1/folders`);
-      console.log(result);
       return result;
     } catch (error) {
       console.error(error);

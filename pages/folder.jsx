@@ -14,6 +14,7 @@ export default function Folder() {
   const [title, setTitle] = useState("전체");
   const [listId, setListId] = useState("");
   const [data, setData] = useState([]);
+  const [user, setUser] = useState(null);
   const [allMenuId, setAllMenuId] = useState(null);
   const [addModal, setAddModal] = useState({
     linkModal: false,
@@ -35,16 +36,24 @@ export default function Folder() {
         `/users/1${id === 0 ? `/links` : `/folders/${id}`}`
       );
       const result = response.data;
-      console.log(result);
       setData(result);
     } catch (error) {
       console.error(error);
     }
   };
 
+  const handleUser = async () => {
+    const user = await axios.get("/sample/user");
+    setUser(user);
+  };
+
   useEffect(() => {
     handleLoad(listId);
   }, [listId]);
+
+  useEffect(() => {
+    handleUser();
+  }, []);
 
   const isShowModal = (linkAddModal) => {
     setAddModal(linkAddModal);
@@ -52,7 +61,7 @@ export default function Folder() {
 
   const getFolderList = async () => {
     try {
-      const result = getAPI(`/users/1/folders`);
+      const result = await axios.get(`/users/1/folders`);
       return result;
     } catch (error) {
       console.error(error);
@@ -140,7 +149,6 @@ export default function Folder() {
         <NoLink>저장된 링크가 없습니다.</NoLink>
       )}
       <AddFolderBtn>폴더 추가 +</AddFolderBtn>
-      <h2>Folder</h2>
     </>
   );
 }
